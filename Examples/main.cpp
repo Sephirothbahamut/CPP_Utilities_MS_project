@@ -7,7 +7,6 @@
 #include <utils/MS/graphics/dx.h>
 #include <utils/MS/graphics/text/format.h>
 #include <utils/MS/graphics/text/renderer.h>
-#include <utils/MS/graphics/text/effect/to_image.h>
 
 #include <utils/MS/raw/graphics/text/custom_renderer.h>
 
@@ -23,65 +22,8 @@ const auto lipslong
 	)"
 	};
 
-
-
-namespace utils::MS::graphics::text
-	{
-	enum class flow_direction { top_to_bottom = 0, bottom_to_top = 1, left_to_right = 2, right_to_left = 3 };
-	DWRITE_FLOW_DIRECTION cast(flow_direction flow_direction) noexcept
-		{
-		switch (flow_direction)
-			{
-			case utils::MS::graphics::text::flow_direction::top_to_bottom: return DWRITE_FLOW_DIRECTION::DWRITE_FLOW_DIRECTION_TOP_TO_BOTTOM;
-			case utils::MS::graphics::text::flow_direction::bottom_to_top: return DWRITE_FLOW_DIRECTION::DWRITE_FLOW_DIRECTION_BOTTOM_TO_TOP;
-			case utils::MS::graphics::text::flow_direction::left_to_right: return DWRITE_FLOW_DIRECTION::DWRITE_FLOW_DIRECTION_LEFT_TO_RIGHT;
-			case utils::MS::graphics::text::flow_direction::right_to_left: return DWRITE_FLOW_DIRECTION::DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT;
-			}
-		std::unreachable();
-		}
-
-	struct format2
-		{
-		std::string font;
-
-		float size{16.f};
-		struct alignment
-			{
-			utils::alignment::vertical   vertical{utils::alignment::vertical::top};
-			utils::alignment::horizontal horizontal{utils::alignment::horizontal::left};
-			} alignment;
-
-		weight       weight{weight::normal};
-		style        style{style::normal};
-		antialiasing antialiasing{antialiasing::greyscale};
-
-		std::string locale{"en-gb"};
-
-		utils::graphics::colour::rgba_f colour{utils::graphics::colour::base::black};
-		bool shrink_to_fit{false};
-
-		void func()
-			{
-			utils::MS::raw::graphics::dw::text_layout::com_ptr c;
-			}
-		};
-
-	}
-
 int main()
 	{
-
-
-
-
-
-
-
-
-
-
-
-
 	const utils::graphics::colour::rgba_f background_colour{0.f, .1f, .2f, 1.f};
 	const utils::math::vec2s resolution{size_t{512}, size_t{256}};
 	const utils::math::vec2f resolution_f{static_cast<float>(resolution.x()), static_cast<float>(resolution.y())};
@@ -148,25 +90,44 @@ int main()
 		auto renderer{utils::MS::raw::graphics::text::custom_renderer::renderer::create(d2d_factory)};
 
 		auto text_format{utils::MS::raw::graphics::dw::text_format::create(dw_factory, text_format_0)};
-		auto text_layout{utils::MS::raw::graphics::dw::text_layout::create(dw_factory, text_format, "Hello world\nasdQWE", resolution_f)};
+		auto text_layout{utils::MS::raw::graphics::dw::text_layout::create(dw_factory, text_format, "Hello-world\nasdQWE", resolution_f)};
 
-		utils::MS::raw::graphics::text::custom_renderer::effects::data_opt effects
+
+
+
+
+
+		utils::MS::graphics::text::effects_regions er;
+		er.decorators_to_image.add(false, {5, 5});
+		er.text_colour      .add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 30});
+		er.decorators_colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
+		er.decorators_colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
+		er.text_to_image    .add(false                                              , {6,  3});
+		er.text_colour      .add(utils::graphics::colour::rgba_f{0.f, 1.f, 0.f, 1.f}, {6,  3});
+		er.outline_to_image .add(true                                               , {6, 15});
+		
+		const auto effects_regions{er.evaluate_effects_regions()};
+		
+		for (size_t i{0}; i < effects_regions.slots_size(); i++)
 			{
-			.text_to_image{false},
-			.outline_to_image{true},
-			.outline_to_shapes{true},
-			.decorators_to_image{true},
-			.decorators_to_shapes{true}
-			};
-		auto com_ptr_effects{utils::MS::raw::graphics::text::custom_renderer::effects::create(effects)};
-		text_layout->SetDrawingEffect(com_ptr_effects.get(), {6, 5});
-		text_layout->SetUnderline(true, {6, 2});
+			const auto slot{effects_regions.slot_at(i)};
+			if (slot.value_opt_ref.has_value())
+				{
+				const auto& value{slot.value_opt_ref.value().get()};
+		
+				auto com_ptr_effects{utils::MS::raw::graphics::text::custom_renderer::effects::create(value)};
+				text_layout->SetDrawingEffect(com_ptr_effects.get(), DWRITE_TEXT_RANGE{utils::math::cast_clamp<UINT32>(slot.region.begin), utils::math::cast_clamp<UINT32>(slot.region.count)});
+				}
+			}
+
+		text_layout->SetUnderline(true, {0, 20});
 
 		utils::MS::raw::graphics::text::custom_renderer::contexts contexts{.render_context{d2d_context}};
 		
 		d2d_context->BeginDraw();
+		
 		text_layout->Draw(&contexts, renderer.get(), 0.f, 0.f);
-		d2d_context->EndDraw();
+		d2d_context->EndDraw  ();
 		}
 	
 	const auto cpu_image{utils::MS::raw::graphics::d2d::bitmap::to_cpu_matrix(bitmap, d2d_context)};
