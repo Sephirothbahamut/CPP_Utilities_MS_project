@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e45a7b10-b2db-4328-9aa5-e95fbae39f6d}</ProjectGuid>
+    <RootNamespace>CPPUtilitiesMS</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>../CPP_Utilities/include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>../CPP_Utilities/include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <AdditionalOptions>/D "NOMINMAX" /D "WINDOWS_LEAN_AND_MEAN" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <AdditionalOptions>/D "NOMINMAX" /D "WINDOWS_LEAN_AND_MEAN" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\initializer\base.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\text\effects.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\text\formatted_string.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\text\renderer.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\brush.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\context.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\factory.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\factory.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_format.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_layout.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\effects.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.cpp" />
+    <ClCompile Include="Library\include\utils\MS\string.cpp" />
+    <ClCompile Include="quick_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\base.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\base.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\exposed_MS.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\text\effects.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\text\format.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\text\formatted_string.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\text\renderer.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\base_types.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\cast.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\cast.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\all.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\brush.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\cast.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\context.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\device.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\factory.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\all.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\cast.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\device.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\all.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\cast.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\factory.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\text_format.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\text_layout.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\all.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\cast.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\device.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\all.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\contexts.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\effects.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\windows.h" />
+    <ClInclude Include="Library\include\utils\MS\string.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

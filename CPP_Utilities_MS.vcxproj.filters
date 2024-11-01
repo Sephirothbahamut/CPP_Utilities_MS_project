@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{5d365633-d0c6-42fe-986b-6889f965a97b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS">
+      <UniqueIdentifier>{b47e72d4-a1af-4500-a152-a95453d54480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw">
+      <UniqueIdentifier>{3a27c47e-4667-4420-8d81-ca5d2e5d8a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics">
+      <UniqueIdentifier>{3fd5e937-8364-4bf2-b9eb-b200ecbde187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\graphics">
+      <UniqueIdentifier>{fef0ed7f-4571-4045-b603-4aaa246269ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\graphics\text">
+      <UniqueIdentifier>{3ced58d7-d19b-45f1-a532-7a6b05def0dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\dxgi">
+      <UniqueIdentifier>{3d3997dd-0279-4357-896c-1ec4bea1895f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\d2d">
+      <UniqueIdentifier>{063a3af4-008f-4ad7-a1f5-47c690944e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\d3d">
+      <UniqueIdentifier>{2608c5eb-d406-424e-8d41-6096b92d6d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\dw">
+      <UniqueIdentifier>{2b67d671-7a99-47f3-bc62-a3b26f0b656c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\text">
+      <UniqueIdentifier>{e63d50eb-7e76-48ab-b066-05652ce9e060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\graphics\dx">
+      <UniqueIdentifier>{31fbbe86-7309-4339-9f03-bba001e60c51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\graphics\dx\initializer">
+      <UniqueIdentifier>{120f51f6-3154-4e70-831c-3d25f06637df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\graphics\dx\context">
+      <UniqueIdentifier>{af0a17a4-c3fc-468a-bfb6-9f96caa7b691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\text\custom_renderer">
+      <UniqueIdentifier>{b756bade-e26a-4ad4-a1d3-f05dc36173f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Library\include\utils\MS\raw\cast.cpp">
+      <Filter>Library\MS\raw</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\common.cpp">
+      <Filter>Library\MS\raw</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\cast.cpp">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\common.cpp">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\common.cpp">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\cast.cpp">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\common.cpp">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\cast.cpp">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\common.cpp">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\cast.cpp">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\common.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\cast.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\text\formatted_string.cpp">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\text\renderer.cpp">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\string.cpp">
+      <Filter>Library\MS</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\brush.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_layout.cpp">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_format.cpp">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClCompile>
+    <ClCompile Include="quick_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\factory.cpp">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\context.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\device.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\factory.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\device.cpp">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\device.cpp">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\initializer\base.cpp">
+      <Filter>Library\MS\graphics\dx\initializer</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.cpp">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\effects.cpp">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.cpp">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\text\effects.cpp">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Library\include\utils\MS\raw\base_types.h">
+      <Filter>Library\MS\raw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\cast.h">
+      <Filter>Library\MS\raw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\common.h">
+      <Filter>Library\MS\raw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\windows.h">
+      <Filter>Library\MS\raw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\cast.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\common.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\common.h">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\cast.h">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\cast.h">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\common.h">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\cast.h">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\common.h">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\cast.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\common.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\text\format.h">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\text\formatted_string.h">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\text\renderer.h">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\string.h">
+      <Filter>Library\MS</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\all.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\brush.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\text_layout.h">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\all.h">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\text_format.h">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\all.h">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\all.h">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dw\factory.h">
+      <Filter>Library\MS\raw\graphics\dw</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\context.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\device.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\factory.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\device.h">
+      <Filter>Library\MS\raw\graphics\d3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\device.h">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context.h">
+      <Filter>Library\MS\graphics\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer.h">
+      <Filter>Library\MS\graphics\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\exposed_MS.h">
+      <Filter>Library\MS\graphics\dx\initializer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.h">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx.h">
+      <Filter>Library\MS\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\base.h">
+      <Filter>Library\MS\graphics\dx\initializer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\base.h">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.h">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\contexts.h">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\effects.h">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.h">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\all.h">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer.h">
+      <Filter>Library\MS\raw\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\common.h">
+      <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\text\effects.h">
+      <Filter>Library\MS\graphics\text</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
