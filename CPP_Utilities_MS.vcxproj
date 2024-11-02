@@ -142,8 +142,8 @@
     <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp" />
     <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp" />
     <ClCompile Include="Library\include\utils\MS\graphics\dx\initializer\base.cpp" />
-    <ClCompile Include="Library\include\utils\MS\graphics\text\effects.cpp" />
     <ClCompile Include="Library\include\utils\MS\graphics\text\formatted_string.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\text\properties.cpp" />
     <ClCompile Include="Library\include\utils\MS\graphics\text\renderer.cpp" />
     <ClCompile Include="Library\include\utils\MS\raw\cast.cpp" />
     <ClCompile Include="Library\include\utils\MS\raw\common.cpp" />
@@ -181,9 +181,10 @@
     <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\base.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\exposed_MS.h" />
-    <ClInclude Include="Library\include\utils\MS\graphics\text\effects.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\text\format.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\text\formatted_string.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\text\formatted_string_exposed_MS.h" />
+    <ClInclude Include="Library\include\utils\MS\graphics\text\properties.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\text\renderer.h" />
     <ClInclude Include="Library\include\utils\MS\raw\base_types.h" />
     <ClInclude Include="Library\include\utils\MS\raw\cast.h" />

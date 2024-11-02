@@ -24,112 +24,44 @@ const auto lipslong
 
 int main()
 	{
-	const utils::graphics::colour::rgba_f background_colour{0.f, .1f, .2f, 1.f};
-	const utils::math::vec2s resolution{size_t{512}, size_t{256}};
-	const utils::math::vec2f resolution_f{static_cast<float>(resolution.x()), static_cast<float>(resolution.y())};
-
-
-	utils::MS::graphics::text::format text_format_0
-		{
-		.font{"Gabriola"},
-		.size{64.f},
-		.alignment{.horizontal{utils::alignment::horizontal::centre}},
-		.colour{utils::graphics::colour::base::white},
-		.shrink_to_fit{true}
-		};
-	utils::MS::graphics::text::format text_format_1
-		{
-		.font{"Arial"},
-		.alignment{.vertical{utils::alignment::vertical::top}},
-		.colour{utils::graphics::colour::base::white, .8f},
-		.shrink_to_fit{true}
-		};
-
-	utils::MS::graphics::text::renderer text_renderer{resolution, background_colour};
-	text_renderer.draw_text(text_format_0, "Hello World!", {0.f, 0.f, resolution_f.x(), 64.f});
-	text_renderer.draw_text(text_format_1, lipslong, {0.f, 64.f, resolution_f.x(), resolution_f.y()});
-
-	const auto image{text_renderer.get_image()};
-
-	std::filesystem::create_directories("./output");
-	utils::graphics::image::save_to_file(image, "output/test.png");
-
-
-
-
 	utils::MS::graphics::dx::initializer dx_initializer;
 	utils::MS::graphics::dx::context     dx_context{dx_initializer};
-	
-	utils::MS::graphics::text::formatted_string formatted_string{"Hello Universe!", text_format_0, resolution_f};
 
-	auto dw_factory {utils::MS::raw::graphics::dw  ::factory::create()};
-	auto d3d_device {utils::MS::raw::graphics::d3d ::device ::create()};
-	auto dxgi_device{utils::MS::raw::graphics::dxgi::device ::create(d3d_device)};
-	auto d2d_factory{utils::MS::raw::graphics::d2d ::factory::create()};
-	auto d2d_device {utils::MS::raw::graphics::d2d ::device ::create(d2d_factory, dxgi_device)};
-	auto d2d_context{utils::MS::raw::graphics::d2d ::context::create(d2d_device)};
-	
-	auto brush{utils::MS::raw::graphics::d2d::brush::create(d2d_context, {1.f, .5f, 0.f, 1.f})};
-	
-	
-	
-	auto bitmap{utils::MS::raw::graphics::d2d::bitmap::create(d2d_context, utils::MS::raw::graphics::d2d::bitmap::create_info
+	while(true)
 		{
-		.resolution {resolution},
-		.dxgi_format{DXGI_FORMAT_R32G32B32A32_FLOAT},
-		.alpha_mode {D2D1_ALPHA_MODE_PREMULTIPLIED},
-		.options    {D2D1_BITMAP_OPTIONS_TARGET},
-		})};
-	d2d_context->SetTarget(bitmap.get());
-	d2d_context->BeginDraw();
-	d2d_context->Clear(utils::MS::raw::graphics::d2d::cast(background_colour));
-	d2d_context->EndDraw();
-	
-	if (true)
-		{
-		auto renderer{utils::MS::raw::graphics::text::custom_renderer::renderer::create(d2d_factory)};
+		const utils::graphics::colour::rgba_f background_colour{0.f, .1f, .2f, 1.f};
+		const utils::math::vec2s resolution{size_t{512}, size_t{256}};
+		const utils::math::vec2f resolution_f{static_cast<float>(resolution.x()), static_cast<float>(resolution.y())};
 
-		auto text_format{utils::MS::raw::graphics::dw::text_format::create(dw_factory, text_format_0)};
-		auto text_layout{utils::MS::raw::graphics::dw::text_layout::create(dw_factory, text_format, "Hello-world\nasdQWE", resolution_f)};
-
-
-
-
-
-
-		utils::MS::graphics::text::effects_regions er;
-		er.decorators_to_image.add(false, {5, 5});
-		er.text_colour      .add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 30});
-		er.decorators_colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
-		er.decorators_colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
-		er.text_to_image    .add(false                                              , {6,  3});
-		er.text_colour      .add(utils::graphics::colour::rgba_f{0.f, 1.f, 0.f, 1.f}, {6,  3});
-		er.outline_to_image .add(true                                               , {6, 15});
-		
-		const auto effects_regions{er.evaluate_effects_regions()};
-		
-		for (size_t i{0}; i < effects_regions.slots_size(); i++)
+		utils::MS::graphics::text::format text_format
 			{
-			const auto slot{effects_regions.slot_at(i)};
-			if (slot.value_opt_ref.has_value())
-				{
-				const auto& value{slot.value_opt_ref.value().get()};
-		
-				auto com_ptr_effects{utils::MS::raw::graphics::text::custom_renderer::effects::create(value)};
-				text_layout->SetDrawingEffect(com_ptr_effects.get(), DWRITE_TEXT_RANGE{utils::math::cast_clamp<UINT32>(slot.region.begin), utils::math::cast_clamp<UINT32>(slot.region.count)});
-				}
-			}
+			.font{"Gabriola"},
+			.size{64.f},
+			.alignment{.horizontal{utils::alignment::horizontal::centre}}
+			};
 
-		text_layout->SetUnderline(true, {0, 20});
-
-		utils::MS::raw::graphics::text::custom_renderer::contexts contexts{.render_context{d2d_context}};
-		
-		d2d_context->BeginDraw();
-		
-		text_layout->Draw(&contexts, renderer.get(), 0.f, 0.f);
-		d2d_context->EndDraw  ();
-		}
+		utils::MS::graphics::text::renderer text_renderer{dx_initializer, resolution, background_colour};
 	
-	const auto cpu_image{utils::MS::raw::graphics::d2d::bitmap::to_cpu_matrix(bitmap, d2d_context)};
-	utils::graphics::image::save_to_file(cpu_image, "output/test2.png");
+		utils::MS::graphics::text::formatted_string formatted_string{dx_initializer, "Hello Universe!", text_format, {128.f, 32.f}};
+	
+		formatted_string.properties_regions.rendering.decorators.to_image.add(false, {5, 5});
+		formatted_string.properties_regions.rendering.text.colour      .add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 30});
+		formatted_string.properties_regions.rendering.outline.colour   .add(utils::graphics::colour::rgba_f{.3f, 1.f, .7f, 1.f}, {0, 30});
+		formatted_string.properties_regions.rendering.decorators.colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
+		formatted_string.properties_regions.rendering.decorators.colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
+		formatted_string.properties_regions.rendering.text.to_image    .add(false                                              , {6,  3});
+		formatted_string.properties_regions.rendering.text.colour      .add(utils::graphics::colour::rgba_f{0.f, 1.f, 0.f, 1.f}, {6,  3});
+		formatted_string.properties_regions.rendering.outline.to_image .add(true                                               , {6, 15});
+		formatted_string.properties_regions.formatting.font.add("Arial", {3, 5});
+		formatted_string.properties_regions.formatting.size.add(48.f, {5, 4});
+		formatted_string.shrink_to_fit();
+		formatted_string.update();
+
+		text_renderer.draw_text(formatted_string, {0.f, 0.f});
+
+		const auto image{text_renderer.get_output().image};
+
+		std::filesystem::create_directories("./output");
+		utils::graphics::image::save_to_file(image, "output/test.png");
+		}
 	}
