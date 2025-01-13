@@ -36,9 +36,9 @@ int main()
 		.alignment{.horizontal{utils::alignment::horizontal::centre}}
 		};
 
-	utils::MS::graphics::text::renderer text_renderer{dx_initializer, resolution, background_colour};
+	utils::MS::graphics::text::renderer text_renderer{dx_initializer, utils::MS::graphics::text::renderer::create_info{.resolution{resolution}, .clear_colour{background_colour}}};
 	
-	utils::MS::graphics::text::formatted_string formatted_string{dx_initializer, "Hello Universe!", text_format, {128.f, 32.f}};
+	utils::MS::graphics::text::formatted_string formatted_string{"Hello Universe!", text_format, {128.f, 32.f}};
 	
 	formatted_string.properties_regions.rendering.decorators.to_image.add(false, {5, 5});
 	formatted_string.properties_regions.rendering.text.colour      .add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 30});
@@ -50,10 +50,9 @@ int main()
 	formatted_string.properties_regions.rendering.outline.to_image .add(true                                               , {6, 15});
 	formatted_string.properties_regions.formatting.font.add("Arial", {3, 5});
 	formatted_string.properties_regions.formatting.size.add(48.f, {5, 4});
-	formatted_string.shrink_to_fit();
-	formatted_string.update();
+	const auto renderable{formatted_string.shrink_to_fit(dx_initializer)};
 
-	text_renderer.draw_text(formatted_string, {0.f, 0.f});
+	text_renderer.draw_text(renderable, {0.f, 0.f});
 
 	const auto image{text_renderer.get_output().image};
 
