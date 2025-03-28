@@ -156,9 +156,6 @@
     <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.cpp">
       <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
     </ClCompile>
-    <ClCompile Include="Library\include\utils\MS\graphics\text\properties.cpp">
-      <Filter>Library\MS\graphics\text</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Library\include\utils\MS\raw\base_types.h">
@@ -311,14 +308,14 @@
     <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\common.h">
       <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
     </ClInclude>
-    <ClInclude Include="Library\include\utils\MS\graphics\text\properties.h">
-      <Filter>Library\MS\graphics\text</Filter>
-    </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\text\formatted_string_exposed_MS.h">
       <Filter>Library\MS\graphics\text</Filter>
     </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\conversions.h">
       <Filter>Library\MS\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\text\output.h">
+      <Filter>Library\MS\graphics\text</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
