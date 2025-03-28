@@ -317,5 +317,8 @@
     <ClInclude Include="Library\include\utils\MS\graphics\text\formatted_string_exposed_MS.h">
       <Filter>Library\MS\graphics\text</Filter>
     </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\conversions.h">
+      <Filter>Library\MS\graphics</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
