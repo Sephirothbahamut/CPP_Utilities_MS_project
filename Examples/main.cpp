@@ -39,24 +39,31 @@ int main()
 	utils::MS::graphics::text::renderer text_renderer{dx_initializer, utils::MS::graphics::text::renderer::create_info{.resolution{resolution}, .clear_colour{background_colour}}};
 	
 	utils::MS::graphics::text::formatted_string formatted_string{"Hello Universe!", text_format, {512.f, 256.f}};
+	formatted_string.reset_properties_regions_to_format();
 
-	formatted_string.properties_regions.regions_per_field.render.fill         .to_image .add(false, {6,  3});
-	formatted_string.properties_regions.regions_per_field.render.outline      .to_image .add(true , {6, 15});
-	formatted_string.properties_regions.regions_per_field.render.underline    .to_image .add(true , {5,  5});
-	formatted_string.properties_regions.regions_per_field.render.underline    .to_shapes.add(true , {6,  5});
-	formatted_string.properties_regions.regions_per_field.render.strikethrough.to_image .add(true , {5,  5});
-	formatted_string.properties_regions.regions_per_field.render.strikethrough.to_shapes.add(true , {6,  5});
+	formatted_string.properties_regions.render.fill         .to_image.reset(true);
+	formatted_string.properties_regions.render.outline      .to_image.reset(true);
+	formatted_string.properties_regions.render.underline    .to_image.reset(true);
+	formatted_string.properties_regions.render.rect         .to_image.reset(true);
+	formatted_string.properties_regions.render.strikethrough.to_image.reset(true);
 
-	formatted_string.properties_regions.regions_per_field.render.fill         .colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 30});
-	formatted_string.properties_regions.regions_per_field.render.fill         .colour.add(utils::graphics::colour::rgba_f{0.f, 1.f, 0.f, 1.f}, {6,  3});
-	formatted_string.properties_regions.regions_per_field.render.outline      .colour.add(utils::graphics::colour::rgba_f{.3f, 1.f, .7f, 1.f}, {0, 30});
-	formatted_string.properties_regions.regions_per_field.render.underline    .colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
-	formatted_string.properties_regions.regions_per_field.render.underline    .colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
-	formatted_string.properties_regions.regions_per_field.render.strikethrough.colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
-	formatted_string.properties_regions.regions_per_field.render.strikethrough.colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
-	formatted_string.properties_regions.regions_per_field.format.font.add("Arial", {3, 5});
-	formatted_string.properties_regions.regions_per_field.format.size.add(48.f, {5, 4});
-	formatted_string.properties_regions.regions_per_field.format.strikethrough.add(true, {5, 5});
+	formatted_string.properties_regions.format.fill         .enabled.add(false, {6,  3});
+	formatted_string.properties_regions.format.outline      .enabled.add(true , {6, 15});
+	formatted_string.properties_regions.format.underline    .enabled.add(true , {5,  5});
+	formatted_string.properties_regions.format.underline    .enabled.add(true , {6,  5});
+	formatted_string.properties_regions.format.strikethrough.enabled.add(true , {5,  5});
+	formatted_string.properties_regions.format.strikethrough.enabled.add(true , {6,  5});
+
+	formatted_string.properties_regions.format.fill         .colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 30});
+	formatted_string.properties_regions.format.fill         .colour.add(utils::graphics::colour::rgba_f{0.f, 1.f, 0.f, 1.f}, {3,  3});
+	formatted_string.properties_regions.format.outline      .colour.add(utils::graphics::colour::rgba_f{.3f, 1.f, .7f, 1.f}, {0, 30});
+	formatted_string.properties_regions.format.underline    .colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
+	formatted_string.properties_regions.format.underline    .colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
+	formatted_string.properties_regions.format.strikethrough.colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
+	formatted_string.properties_regions.format.strikethrough.colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
+	formatted_string.properties_regions.format.font.add("Arial", {3, 5});
+	formatted_string.properties_regions.format.size.add(48.f, {5, 4});
+
 	const auto renderable{formatted_string.shrink_to_fit(dx_initializer)};
 
 	text_renderer.draw_text(renderable, {0.f, 0.f});
