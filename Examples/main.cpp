@@ -38,8 +38,7 @@ int main()
 
 	utils::MS::graphics::text::renderer text_renderer{dx_initializer, utils::MS::graphics::text::renderer::create_info{.resolution{resolution}, .clear_colour{background_colour}}};
 	
-	utils::MS::graphics::text::formatted_string formatted_string{"Hello Universe!", text_format, {512.f, 256.f}};
-	formatted_string.reset_properties_regions_to_format();
+	utils::MS::graphics::text::formatted_string formatted_string{u"Hello Universe!", text_format, {512.f, 256.f}};
 
 	formatted_string.properties_regions.render.fill         .to_image.reset(true);
 	formatted_string.properties_regions.render.outline      .to_image.reset(true);
