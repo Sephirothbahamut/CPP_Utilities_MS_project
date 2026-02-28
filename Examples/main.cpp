@@ -31,7 +31,7 @@ int main()
 
 	utils::MS::graphics::text::format text_format
 		{
-		.font{"Gabriola"},
+		.font{u"Gabriola"},
 		.size{96.f},
 		.alignment{.horizontal_alignment{utils::alignment::horizontal::centre}}
 		};
@@ -60,7 +60,7 @@ int main()
 	formatted_string.properties_regions.format.underline    .colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
 	formatted_string.properties_regions.format.strikethrough.colour.add(utils::graphics::colour::rgba_f{1.f, 0.f, 0.f, 1.f}, {0, 11});
 	formatted_string.properties_regions.format.strikethrough.colour.add(utils::graphics::colour::rgba_f{1.f, 1.f, 0.f, 1.f}, {2,  3});
-	formatted_string.properties_regions.format.font.add("Arial", {3, 5});
+	formatted_string.properties_regions.format.font.add(u"Arial", {3, 5});
 	formatted_string.properties_regions.format.size.add(48.f, {5, 4});
 
 	const auto renderable{formatted_string.shrink_to_fit(dx_initializer)};
