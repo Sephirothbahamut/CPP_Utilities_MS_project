@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>17.0</VCProjectVersion>
+    <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e45a7b10-b2db-4328-9aa5-e95fbae39f6d}</ProjectGuid>
+    <ProjectGuid>{2182c190-752d-40f4-8f9c-b964f048899b}</ProjectGuid>
     <RootNamespace>CPPUtilitiesMS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -82,11 +82,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -96,28 +100,32 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOMINMAX;WINDOWS_LEAN_AND_MEAN;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp23</LanguageStandard>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <AdditionalOptions>/D "NOMINMAX" /D "WINDOWS_LEAN_AND_MEAN" %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -125,54 +133,21 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOMINMAX;WINDOWS_LEAN_AND_MEAN;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp23</LanguageStandard>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
-      <AdditionalOptions>/D "NOMINMAX" /D "WINDOWS_LEAN_AND_MEAN" %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp" />
-    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp" />
-    <ClCompile Include="Library\include\utils\MS\graphics\dx\initializer\base.cpp" />
-    <ClCompile Include="Library\include\utils\MS\graphics\text\formatted_string.cpp" />
-    <ClCompile Include="Library\include\utils\MS\graphics\text\renderer.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\cast.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\common.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\cast.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\common.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\brush.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\cast.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\common.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\context.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\device.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\factory.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\cast.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\common.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\device.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\cast.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\common.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\factory.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_format.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_layout.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\cast.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\common.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\device.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\effects.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.cpp" />
-    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.cpp" />
-    <ClCompile Include="Library\include\utils\MS\string.cpp" />
-    <ClCompile Include="quick_tests.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="Library\include\utils\MS\base_types.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\conversions.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\dx.h" />
     <ClInclude Include="Library\include\utils\MS\graphics\dx\context.h" />
@@ -191,6 +166,12 @@
     <ClInclude Include="Library\include\utils\MS\raw\common.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\cast.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\all.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\common.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\device.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\target.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\visual.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\all.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.h" />
@@ -200,6 +181,8 @@
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\context.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\device.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\factory.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\render_target.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d_window_module.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\all.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\d3d\cast.h" />
@@ -217,6 +200,7 @@
     <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\cast.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\common.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\device.h" />
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\swap_chain.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\all.h" />
     <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\common.h" />
@@ -226,6 +210,66 @@
     <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.h" />
     <ClInclude Include="Library\include\utils\MS\raw\windows.h" />
     <ClInclude Include="Library\include\utils\MS\string.h" />
+    <ClInclude Include="Library\include\utils\MS\window\details\DWM.h" />
+    <ClInclude Include="Library\include\utils\MS\window\details\style.h" />
+    <ClInclude Include="Library\include\utils\MS\window\hwnd_wrapper.h" />
+    <ClInclude Include="Library\include\utils\MS\window\input\keyboard.h" />
+    <ClInclude Include="Library\include\utils\MS\window\input\mouse.h" />
+    <ClInclude Include="Library\include\utils\MS\window\input\passthrough.h" />
+    <ClInclude Include="Library\include\utils\MS\window\regions.h" />
+    <ClInclude Include="Library\include\utils\MS\window\snap_on_drag.h" />
+    <ClInclude Include="Library\include\utils\MS\window\style.h" />
+    <ClInclude Include="Library\include\utils\MS\window\taskbar.h" />
+    <ClInclude Include="Library\include\utils\MS\window\window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\initializer\base.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\text\formatted_string.cpp" />
+    <ClCompile Include="Library\include\utils\MS\graphics\text\renderer.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\composition\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\composition\target.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\composition\visual.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\bitmap.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\brush.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\context.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\factory.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\render_target.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d3d\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\factory.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_format.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dw\text_layout.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\cast.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\common.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\device.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\swap_chain.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\effects.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.cpp" />
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.cpp" />
+    <ClCompile Include="Library\include\utils\MS\string.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\details\style.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\hwnd_wrapper.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\input\keyboard.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\input\mouse.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\input\passthrough.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\regions.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\snap_on_drag.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\style.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\taskbar.cpp" />
+    <ClCompile Include="Library\include\utils\MS\window\window.cpp" />
+    <ClCompile Include="quick_tests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

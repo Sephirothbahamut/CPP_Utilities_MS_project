@@ -5,14 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Library">
       <UniqueIdentifier>{5d365633-d0c6-42fe-986b-6889f965a97b}</UniqueIdentifier>
     </Filter>
@@ -52,11 +44,23 @@
     <Filter Include="Library\MS\graphics\dx\initializer">
       <UniqueIdentifier>{120f51f6-3154-4e70-831c-3d25f06637df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Library\MS\graphics\dx\context">
-      <UniqueIdentifier>{af0a17a4-c3fc-468a-bfb6-9f96caa7b691}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\MS\raw\graphics\text\custom_renderer">
       <UniqueIdentifier>{b756bade-e26a-4ad4-a1d3-f05dc36173f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\window">
+      <UniqueIdentifier>{65e9b063-b2cd-4daa-83e9-fc6a362c49f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\window\input">
+      <UniqueIdentifier>{fb34b405-0ff8-49a6-b3c2-53a80a955354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\window\details">
+      <UniqueIdentifier>{f69fc6c7-ac97-49c0-bd71-3a3761d47899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\graphics\dx\context">
+      <UniqueIdentifier>{b824888a-fbd0-4694-839a-dba0d7f0b2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MS\raw\graphics\composition">
+      <UniqueIdentifier>{79cab8ee-0b33-40af-96f8-3b6e2fb27701}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -141,12 +145,6 @@
     <ClCompile Include="Library\include\utils\MS\graphics\dx\initializer\base.cpp">
       <Filter>Library\MS\graphics\dx\initializer</Filter>
     </ClCompile>
-    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp">
-      <Filter>Library\MS\graphics\dx\context</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp">
-      <Filter>Library\MS\graphics\dx\context</Filter>
-    </ClCompile>
     <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.cpp">
       <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
     </ClCompile>
@@ -155,6 +153,57 @@
     </ClCompile>
     <ClCompile Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\geometry_sink.cpp">
       <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\hwnd_wrapper.cpp">
+      <Filter>Library\MS\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\regions.cpp">
+      <Filter>Library\MS\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\snap_on_drag.cpp">
+      <Filter>Library\MS\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\style.cpp">
+      <Filter>Library\MS\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\taskbar.cpp">
+      <Filter>Library\MS\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\window.cpp">
+      <Filter>Library\MS\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\input\mouse.cpp">
+      <Filter>Library\MS\window\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\input\passthrough.cpp">
+      <Filter>Library\MS\window\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\input\keyboard.cpp">
+      <Filter>Library\MS\window\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\window\details\style.cpp">
+      <Filter>Library\MS\window\details</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\d2d\render_target.cpp">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\dxgi\swap_chain.cpp">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.cpp">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\graphics\dx\context\base.cpp">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\composition\device.cpp">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\composition\visual.cpp">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\include\utils\MS\raw\graphics\composition\target.cpp">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -266,26 +315,17 @@
     <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\device.h">
       <Filter>Library\MS\raw\graphics\dxgi</Filter>
     </ClInclude>
-    <ClInclude Include="Library\include\utils\MS\graphics\dx\context.h">
-      <Filter>Library\MS\graphics\dx</Filter>
-    </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer.h">
       <Filter>Library\MS\graphics\dx</Filter>
     </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\exposed_MS.h">
       <Filter>Library\MS\graphics\dx\initializer</Filter>
     </ClInclude>
-    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.h">
-      <Filter>Library\MS\graphics\dx\context</Filter>
-    </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\dx.h">
       <Filter>Library\MS\graphics</Filter>
     </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\dx\initializer\base.h">
       <Filter>Library\MS\graphics\dx\initializer</Filter>
-    </ClInclude>
-    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\base.h">
-      <Filter>Library\MS\graphics\dx\context</Filter>
     </ClInclude>
     <ClInclude Include="Library\include\utils\MS\raw\graphics\text\custom_renderer\renderer.h">
       <Filter>Library\MS\raw\graphics\text\custom_renderer</Filter>
@@ -316,6 +356,78 @@
     </ClInclude>
     <ClInclude Include="Library\include\utils\MS\graphics\text\output.h">
       <Filter>Library\MS\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\hwnd_wrapper.h">
+      <Filter>Library\MS\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\regions.h">
+      <Filter>Library\MS\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\snap_on_drag.h">
+      <Filter>Library\MS\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\style.h">
+      <Filter>Library\MS\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\taskbar.h">
+      <Filter>Library\MS\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\window.h">
+      <Filter>Library\MS\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\input\keyboard.h">
+      <Filter>Library\MS\window\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\input\mouse.h">
+      <Filter>Library\MS\window\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\input\passthrough.h">
+      <Filter>Library\MS\window\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\details\DWM.h">
+      <Filter>Library\MS\window\details</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\window\details\style.h">
+      <Filter>Library\MS\window\details</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\base_types.h">
+      <Filter>Library\MS</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d_window_module.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\d2d\render_target.h">
+      <Filter>Library\MS\raw\graphics\d2d</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\dxgi\swap_chain.h">
+      <Filter>Library\MS\raw\graphics\dxgi</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context.h">
+      <Filter>Library\MS\graphics\dx</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\exposed_MS.h">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\graphics\dx\context\base.h">
+      <Filter>Library\MS\graphics\dx\context</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition.h">
+      <Filter>Library\MS\raw\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\visual.h">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\device.h">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\all.h">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\target.h">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\include\utils\MS\raw\graphics\composition\common.h">
+      <Filter>Library\MS\raw\graphics\composition</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
